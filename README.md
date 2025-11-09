@@ -6,6 +6,14 @@ Built on Agent Zero architectural patterns with digital twin generation for crea
 
 ---
 
+## 🚀 **WINDOWS USERS: ONE-CLICK SETUP!**
+
+**Just double-click `setup.bat` and you're done!**
+
+See **[START_HERE.md](START_HERE.md)** for instant setup.
+
+---
+
 ## 🌟 Core Concept
 
 Communities have resources but lack coordination. This platform connects:
