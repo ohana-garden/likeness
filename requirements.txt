@@ -1,0 +1,29 @@
+# Core dependencies
+jinja2>=3.1.0  # Prompt templating
+python-dateutil>=2.8.0  # Date handling
+
+# Optional LLM integrations (uncomment as needed)
+# openai>=1.0.0  # OpenAI API
+# anthropic>=0.7.0  # Anthropic Claude API
+
+# Audio processing (for voice-based likenesses)
+# openai-whisper>=20230918  # Speech-to-text
+# pydub>=0.25.1  # Audio manipulation
+
+# Image processing (for photo-based likenesses)
+# pillow>=10.0.0  # Image handling
+# opencv-python>=4.8.0  # Computer vision
+
+# Vector storage (for advanced memory retrieval)
+# faiss-cpu>=1.7.4  # Vector similarity search
+# sentence-transformers>=2.2.0  # Text embeddings
+
+# Web framework (if building API)
+# fastapi>=0.104.0
+# uvicorn>=0.24.0
+
+# Development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.1.0

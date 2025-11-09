@@ -1,0 +1,117 @@
+# Likeness Configuration
+# This file configures the prompt-based architecture
+
+# LLM Configuration
+llm:
+  # Provider: openai, anthropic, local
+  provider: openai
+  model: gpt-4
+  temperature: 0.7
+  max_tokens: 2000
+
+  # API keys (use environment variables in production)
+  # OPENAI_API_KEY, ANTHROPIC_API_KEY
+
+# Prompt Configuration
+prompts:
+  # Directory containing prompt templates (Layer 1)
+  templates_dir: ./prompts
+
+  # Auto-reload prompts on file change (development)
+  auto_reload: true
+
+  # Default prompt version to use
+  default_version: latest
+
+# Memory Configuration
+memory:
+  # Maximum memories to inject into prompts
+  max_prompt_memories: 10
+
+  # Enable memory compression when exceeding limit
+  enable_compression: true
+
+  # Use vector search for memory retrieval
+  use_vector_search: false
+
+  # Vector DB configuration (if enabled)
+  vector_db:
+    type: faiss  # faiss, pinecone, weaviate
+    dimension: 768  # Embedding dimension
+
+# Digital Twin Compiler Configuration
+compiler:
+  # Enable research phase (requires internet/MCP)
+  enable_research: true
+
+  # Vision model for photo extraction
+  vision_model: gpt-4-vision-preview
+
+  # Audio model for voice extraction
+  audio_model: whisper-1
+
+  # Default entity types
+  entity_types:
+    - plant_kalo
+    - plant_medicinal
+    - plant_other
+    - person
+    - tool
+    - location
+
+# A2A Protocol Configuration
+a2a:
+  # Enable message persistence
+  persist_messages: true
+
+  # Message timeout (seconds)
+  message_timeout: 30
+
+  # Max concurrent A2A messages per agent
+  max_concurrent: 5
+
+# Cultural Context
+cultural:
+  # Default cultural context
+  default: hawaiian
+
+  # Available cultural contexts
+  contexts:
+    hawaiian:
+      language_markers: ['pidgin', 'ʻōlelo', 'ʻohana']
+      spiritual_concepts: ['mana', 'aloha', 'kuleana']
+      plant_reverence: true
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+  # Log all prompts (useful for debugging)
+  log_prompts: true
+
+  # Log A2A messages
+  log_a2a: true
+
+# Persistence
+persistence:
+  # Storage backend: memory, sqlite, postgres
+  backend: sqlite
+
+  # Database connection
+  database:
+    path: ./data/likeness.db
+
+  # Auto-save interval (seconds)
+  autosave_interval: 60
+
+# Development
+development:
+  # Enable debug mode
+  debug: true
+
+  # Enable prompt replay (for testing)
+  enable_replay: true
+
+  # Mock LLM calls (for testing without API)
+  mock_llm: false
